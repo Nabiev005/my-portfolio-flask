@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block title %}Байланыш{% endblock %}
+
+{% block content %}
+    <section class="contact-info" data-aos="zoom-in">
+        <h2 class="section-title">Мага Кабар Жөнөтүңүз</h2>
+        <p class="section-subtitle">Жумуш сунуштары, кызматташуу же суроолор боюнча байланышсаңыз болот.</p>
+        
+        <div class="contact-form-container">
+            
+            {% if message %}
+                <p class="success-message">{{ message }}</p>
+            {% endif %}
+
+            <form method="POST" action="{{ url_for('contact') }}" class="contact-form">
+                
+                <div class="form-group">
+                    <label for="name">Атыңыз:</label>
+                    <input type="text" id="name" name="name" required placeholder="Толук аты-жөнүңүз">
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required placeholder="Сиздин Email адресиңиз">
+                </div>
+                
+                <div class="form-group">
+                    <label for="message_body">Билдирүү:</label>
+                    <textarea id="message_body" name="message_body" rows="6" required placeholder="Бул жерге билдирүүңүздү жазыңыз"></textarea>
+                </div>
+                
+                <button type="submit" class="btn-primary">Билдирүүнү Жөнөтүү</button>
+            </form>
+        </div>
+        
+        <div class="contact-links" data-aos="fade-up" data-aos-delay="200">
+            <h3>Же түздөн-түз байланышыңыз:</h3>
+             <p>Email: <a href="ajbeknabiev90@gmail.com">Менин Email дарегим</a></p>
+        </div>
+    </section>
+{% endblock %}

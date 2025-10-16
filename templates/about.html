@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+
+{% block title %}Мен жөнүндө{% endblock %}
+
+{% block content %}
+    <section class="about-me" data-aos="fade-in">
+        <h2 class="section-title">Мен жөнүндө</h2>
+        
+        <div class="about-card" data-aos="zoom-in" data-aos-delay="300">
+            <img src="{{ url_for('static', filename='images/profile.jpg') }}" alt="Набиев Айбек Сапарбайевичтин сүрөтү" class="profile-photo">
+            
+            <h3>Кыскача маалымат</h3>
+            <p>
+                Мен **Набиев Айбек Сапарбайевич**, Баткен шаарында жайгашкан, [Тажрыйба жылдарыңыз] жылдык тажрыйбасы бар <span class="highlight">квалификациялуу Full Stack Иштеп Чыгуучумун</span>.
+                <br><br>
+                Менин негизги адистигим — **Фронтенд (Frontend) Иштеп Чыгуу**. Мен колдонуучуга ыңгайлуу, заманбап жана жогорку натыйжалуу веб-интерфейстерди түзүүгө басым жасайм. Ошону менен бирге, долбоорлордун туруктуулугун жана функционалдуулугун камсыздоо үчүн **Python бэкэнди** (Flask, Django) менен да иштейм. **Вебдин толук циклин** башкаруу менин күчтүү тарабым.
+            </p>
+        </div>
+
+        <h3 class="section-subtitle" style="margin-top: 50px;">Кесиптик Жөндөмдөр</h3>
+        
+        <ul class="skills-list" data-aos="fade-up">
+            <li>**JavaScript (ES6+)** / TypeScript</li>
+            <li>**HTML5** / **CSS3** (Sass/Less)</li>
+            <li>**React** / Vue / Angular [Эгер колдонсоңуз, кошуңуз]</li>
+            <li>Bootstrap / Tailwind CSS</li>
+            
+            <li class="backend-skill">Python (Backend)</li>
+            <li class="backend-skill">Flask / Django (Жеңил API'лер)</li>
+            <li class="backend-skill">REST API Design / Postman</li>
+            
+            <li>PostgreSQL / MySQL / SQLite</li>
+            <li>Git / GitHub / CI/CD</li>
+        </ul>
+
+        <h3 class="section-subtitle" style="margin-top: 50px;">Билими жана Тажрыйбасы</h3>
+        <div class="experience-list">
+            <p><strong>Okurmen IT академиясы</strong> | Алтын сертификат Okurmen IT | 2023</p>
+            
+            <p>
+                <strong>Okurmen Kids</strong> | [Регистратор] | [9 ай] 
+                <br>
+                <span class="highlight-text">Кыскача жетишкендигиңиз:</span> [Сайттын фронтенд ылдамдыгын 80%га жакшырттым же REST API аркылуу 5 жаңы функцияны коштум.]
+            </p>
+            
+            <p>
+                <strong>[Экинчи Жумуш Орду/Фриланс]</strong> | [Ментор] | [6 айдан бери] 
+                <br>
+                <span class="highlight-text">Кыскача жетишкендигиңиз:</span> [ JavaScript аркылуу интерактивдүү UI/UX компоненттерин иштеп чыктым.]
+            </p>
+        </div>
+        
+    </section>
+{% endblock %}

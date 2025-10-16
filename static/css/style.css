@@ -1,0 +1,501 @@
+/* static/css/style.css - DEEP DARK MODE ЖАНА ЖОГОРКУ КОНТРАСТТУУ ДИЗАЙН */
+
+/* 1. Root Variables (Dark Mode) */
+:root {
+    --primary-color: #00bcd4; /* Акцент: Көгүш (Техникалык жана Жаңычыл) */
+    --text-light: #e0e0e0; /* Ачык текст */
+    --text-dark: #b0b0b0; /* Экинчи даражадагы текст */
+    --bg-main: #121212; /* Караңгы Фон */
+    --card-bg: #1e1e1e; /* Карта Фон (Аз кара) */
+    --border-color: #333333; /* Бозомук чек ара */
+    --shadow-color: rgba(0, 0, 0, 0.4);
+    --font-family: 'Inter', sans-serif;
+    transition: background-color 0.5s, color 0.5s; 
+}
+
+/* 2. Жалпы Стильдер */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    /* Көлөкөсүз, таза, тегиз өтүүлөр */
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); 
+}
+
+body {
+    font-family: var(--font-family);
+    background-color: var(--bg-main);
+    color: var(--text-light);
+    line-height: 1.7;
+}
+
+main {
+    width: 90%;
+    max-width: 1300px;
+    margin: 40px auto;
+    padding: 20px 0;
+}
+
+h1, h2, h3 {
+    color: var(--text-light);
+    font-weight: 700;
+}
+
+h2.section-title {
+    text-align: center;
+    font-size: 2.8em;
+    border-bottom: 2px solid var(--primary-color);
+    display: inline-block;
+    padding-bottom: 10px;
+    margin-bottom: 5px;
+}
+p.section-subtitle {
+    color: var(--text-dark);
+    margin-bottom: 50px;
+}
+.highlight {
+    color: var(--primary-color);
+    font-weight: 800;
+}
+.highlight-text {
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+/* 3. Навигация (Header) */
+header {
+    background-color: var(--card-bg);
+    border-bottom: 1px solid var(--border-color);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+.logo a {
+    font-size: 2.2em;
+    font-weight: 900;
+    color: var(--primary-color);
+    letter-spacing: -2px;
+}
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 35px;
+}
+.nav-links a {
+    color: var(--text-dark);
+    font-weight: 600;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+.nav-links a:hover {
+    color: var(--primary-color);
+}
+
+/* 4. Баскычтар (Buttons) - Flat, High Contrast */
+.btn-primary, .btn-secondary {
+    display: inline-block;
+    padding: 15px 35px;
+    margin-right: 15px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 700;
+    border: 2px solid var(--primary-color); /* Контрасттуу чек ара */
+    cursor: pointer;
+    text-transform: uppercase;
+}
+.btn-primary {
+    background-color: var(--primary-color);
+    color: var(--bg-main); /* Кара фондо ачык текст */
+    box-shadow: 0 4px 15px rgba(0, 188, 212, 0.4);
+}
+.btn-primary:hover {
+    background-color: #0097a7;
+    transform: translateY(-2px);
+}
+.btn-secondary {
+    background-color: transparent;
+    color: var(--primary-color);
+}
+.btn-secondary:hover {
+    background-color: var(--primary-color);
+    color: var(--bg-main);
+}
+
+/* 5. Hero Section (index.html) */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 120px 0;
+}
+.hero-content {
+    max-width: 55%;
+}
+.hero-content h1 {
+    font-size: 4.5em;
+    margin-bottom: 20px;
+    line-height: 1.1;
+}
+.hero-content h2 {
+    font-size: 2em;
+    color: var(--text-dark);
+    margin-bottom: 40px;
+}
+.hero-content p {
+    font-size: 1.1em;
+    color: var(--text-dark);
+    margin-bottom: 40px;
+}
+.hero-image img {
+    width: 100%;
+    max-width: 450px;
+    border-radius: 10px;
+    border: 3px solid var(--primary-color);
+    /* Бир аз техникалык көрүнүш үчүн Box-Shadow */
+    box-shadow: 0 0 50px rgba(0, 188, 212, 0.1), 0 0 10px rgba(0, 188, 212, 0.2);
+    filter: brightness(0.9);
+}
+
+/* Featured Skills (Clean Tags) */
+.featured-skills {
+    text-align: center;
+    padding: 60px 0;
+    border-top: 1px solid var(--border-color);
+}
+.featured-skills ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+.featured-skills li {
+    background-color: var(--card-bg);
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: 600;
+    color: var(--text-light);
+    border: 1px solid var(--border-color);
+}
+
+/* 6. Долбоорлор (Projects) */
+.project-item {
+    background-color: var(--card-bg);
+    padding: 35px;
+    margin-bottom: 40px;
+    border-radius: 10px;
+    border-left: 5px solid var(--primary-color);
+    box-shadow: 0 4px 10px var(--shadow-color);
+}
+.project-item h3 {
+    color: var(--primary-color);
+    font-size: 1.8em;
+}
+.project-item p strong {
+    color: var(--text-light);
+}
+.project-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px var(--shadow-color);
+}
+
+/* 7. Байланыш (Contact Form) */
+.contact-form-container {
+    max-width: 700px;
+    margin: 50px auto;
+    padding: 40px;
+    background-color: var(--card-bg);
+    border-radius: 10px;
+    box-shadow: 0 4px 10px var(--shadow-color);
+    border: 1px solid var(--border-color);
+}
+.form-group input, .form-group textarea {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    background-color: var(--bg-main); /* Фондон айырмалоо */
+    color: var(--text-light);
+    font-size: 1em;
+}
+.form-group input:focus, .form-group textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 8px rgba(0, 188, 212, 0.5);
+}
+.success-message {
+    color: var(--bg-main);
+    background-color: #4CAF50; /* Жашыл */
+    padding: 15px;
+    border-radius: 5px;
+    font-weight: 700;
+    text-align: center;
+}
+
+/* 8. Колонтитул (Footer) */
+footer {
+    text-align: center;
+    padding: 30px;
+    background-color: var(--card-bg);
+    color: var(--text-dark);
+    margin-top: 50px;
+    border-top: 1px solid var(--border-color);
+}
+footer a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* 9. Адаптивдүүлүк (Мобилдик) */
+@media (max-width: 992px) {
+    .hero {
+        flex-direction: column;
+        padding: 80px 0;
+    }
+    .hero-content {
+        max-width: 100%;
+        text-align: center;
+        margin-bottom: 50px;
+    }
+    .hero-content h1 {
+        font-size: 3.5em;
+    }
+    .hero-image {
+        max-width: 70%;
+    }
+    .nav-links {
+        gap: 20px;
+    }
+}
+@media (max-width: 600px) {
+    nav {
+        flex-direction: column;
+        gap: 15px;
+    }
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .hero-content h1 {
+        font-size: 2.5em;
+    }
+    .btn-primary, .btn-secondary {
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 10px;
+        padding: 12px 20px;
+    }
+    .project-item:hover {
+        transform: none;
+    }
+}
+
+
+
+/* static/css/style.css - ГАМБУРГЕР МЕНЮ ЖАНА МОБИЛЬДИК АДАПТАЦИЯ ҮЧҮН КОШУМЧА СТИЛДЕР */
+
+/* ---------------------------------------------------- */
+/* 9.1. Гамбургер Сүрөтчөсүнүн Стильдери */
+/* ---------------------------------------------------- */
+.hamburger {
+    display: none; /* Чоң экрандарда жашыруу */
+    cursor: pointer;
+    padding: 10px 0;
+    z-index: 1001; /* Навигациядан жогору турушу керек */
+}
+
+.hamburger .bar {
+    display: block;
+    width: 28px;
+    height: 3px;
+    margin: 6px auto;
+    background-color: var(--primary-color); /* Акцент түсү менен айырмалоо */
+    border-radius: 2px;
+    /* X-ке айлануу анимациясы үчүн өтүү */
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ---------------------------------------------------- */
+/* 9.2. Адаптивдүүлүктү Өзгөртүү (768px жана андан төмөн) */
+/* ---------------------------------------------------- */
+@media (max-width: 768px) {
+    
+    /* Гамбургерди көрсөтүү */
+    .hamburger {
+        display: block;
+    }
+    
+    /* Навигация шилтемелерин мобилдик көрүнүшкө келтирүү */
+    .nav-links {
+        position: fixed;
+        top: 0; 
+        left: 0;
+        width: 100%;
+        height: 100vh; /* Толук бийиктик */
+        background-color: var(--card-bg); 
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 50px;
+        
+        /* Башында менюну оң жактан сырткары жылдырып жашыруу */
+        transform: translateX(100%);
+        /* Жылмакай чыгуу анимациясы */
+        transition: transform 0.5s ease-in-out; 
+        box-shadow: 0 0 30px var(--shadow-color);
+    }
+    
+    /* JavaScript аркылуу 'active' класс кошулганда менюну көрсөтүү */
+    .nav-links.active {
+        transform: translateX(0);
+    }
+    
+    .nav-links li a {
+        font-size: 1.6em;
+        font-weight: 700;
+        color: var(--text-light);
+        padding: 15px;
+        display: block;
+        border-bottom: 1px solid var(--border-color);
+        width: 80vw; /* Кенен басуу аймагы */
+        text-align: center;
+    }
+    
+    /* ---------------------------------------------------- */
+    /* 9.3. Гамбургердин X-ке айлануу Анимациясы */
+    /* ---------------------------------------------------- */
+    
+    /* Үстүнкү сызык: Төмөн жылдыруу жана 45° буруу */
+    .hamburger.active .bar:nth-child(1) {
+        transform: translateY(9px) rotate(45deg);
+    }
+    /* Ортоңку сызык: Жоголуп кетүү */
+    .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+    /* Астыңкы сызык: Өйдө жылдыруу жана -45° буруу */
+    .hamburger.active .bar:nth-child(3) {
+        transform: translateY(-9px) rotate(-45deg);
+    }
+}
+
+
+
+/* ================================================== */
+/* 10. МЕН ЖӨНҮНДӨ (About Me) СЕКЦИЯСЫН ОҢДОО */
+/* ================================================== */
+
+/* Негизги контейнерди ортого коюу */
+.about-me {
+    padding: 40px 20px;
+    max-width: 1000px; 
+    margin: 0 auto;
+}
+
+.section-subtitle {
+    font-size: 1.8em;
+    color: var(--text-light);
+    margin-top: 50px;
+    margin-bottom: 25px; /* Тизмеден жогору аралык */
+    text-align: left;
+}
+
+/* 10.1. About Card (Сүрөт жана Кыскача маалымат) */
+.about-card {
+    display: flex; /* Сүрөт менен текстти катар жайгаштыруу үчүн */
+    flex-direction: column; /* Демейки: мобилдик көрүнүштө үстү-үстүнө */
+    align-items: center; /* Борборго коюу */
+    gap: 30px; /* Элементтердин ортосундагы аралык */
+    
+    background-color: var(--card-bg); 
+    padding: 40px;
+    border-radius: 10px;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 0 15px var(--shadow-color);
+}
+
+/* 10.2. Профиль Сүрөтүнүн Стильдери */
+.profile-photo {
+    width: 200px; /* Сүрөттүн туурасы: Кичирейттик */
+    height: 200px; /* Сүрөттүн бийиктиги */
+    object-fit: cover; /* Сүрөттү кеспей толтуруу */
+    border-radius: 50%; /* Тегерек форма */
+    border: 4px solid var(--primary-color); /* Акцент түстөгү рамка */
+    flex-shrink: 0; /* Контейнер кичирейгенде сүрөт кичирейбесин */
+}
+
+/* Чоң экрандарда (Планшет жана PC) - Сүрөт Солдо, Текст Оңдо */
+@media (min-width: 768px) {
+    .about-card {
+        flex-direction: row; /* Горизонталдык жайгашуу */
+        align-items: flex-start; /* Элементтерди жогору жакка тегиздөө */
+        text-align: left;
+    }
+    
+    .about-card h3 {
+        /* Чоң экрандарда, сүрөттүн жанында, аталыш дароо башталат */
+        margin-top: 0; 
+    }
+
+    .about-card p {
+        /* Тексттин кеңири көрүнүшү */
+        max-width: 700px;
+    }
+}
+
+/* 10.3. Жөндөмдөр Тизмеси (Skills List) */
+.skills-list {
+    display: flex;
+    flex-wrap: wrap; 
+    gap: 12px;
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+    margin-bottom: 50px;
+}
+
+.skills-list li {
+    background-color: #333333; /* Кара фонго салыштырмалуу бир аз ачык */
+    color: var(--text-light);
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-weight: 500;
+    font-size: 0.9em;
+    border: 1px solid #555;
+}
+/* Негизги жөндөмдөрдү (Frontend) баса белгилөө үчүн стил */
+.skills-list li:first-child,
+.skills-list li:nth-child(2),
+.skills-list li:nth-child(3),
+.skills-list li:nth-child(4) { 
+    background-color: var(--primary-color);
+    color: var(--bg-main);
+    border: 1px solid var(--primary-color);
+}
+
+
+/* 10.4. Тажрыйба Тизмеси (Experience List) */
+.experience-list p {
+    margin-bottom: 25px;
+    padding-left: 20px;
+    border-left: 4px solid var(--primary-color); /* Акценттик сызык */
+}
+
+.experience-list strong {
+    font-size: 1.1em;
+    color: var(--text-light);
+}

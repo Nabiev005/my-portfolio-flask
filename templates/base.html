@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ky">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Python Веб Портфолио{% endblock %}</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"> 
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <meta name="description" content="[Сиздин Атыңыз] - Python, Flask жана Backend иштерине адистешкен Веб Иштеп Чыгуучунун Портфолиосу.">
+    <meta name="keywords" content="Python, Flask, Backend, Web Developer, PostgreSQL, API, Кыргызстан IT, Портфолио">
+</head>
+<body>
+
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="{{ url_for('index') }}">A.N</a>
+            </div>
+            
+            <div class="hamburger" id="hamburger-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="{{ url_for('index') }}">Башкы</a></li>
+                <li><a href="{{ url_for('about') }}">Мен жөнүндө</a></li>
+                <li><a href="{{ url_for('projects') }}">Долбоорлор</a></li>
+                <li><a href="{{ url_for('contact') }}">Байланыш</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer>
+        <p>&copy; 2025 FULLSTACT Developer. Бардык укуктар корголгон.</p>
+        <div class="social-links">
+            <a href="https://github.com/Nabiev005" target="_blank">GitHub</a> |
+            <a href="https://www.linkedin.com/feed/" target="_blank">LinkedIn</a>
+        </div>
+    </footer>
+    
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000, 
+            once: true 
+        });
+    </script>
+    <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block title %}Front end Backend Веб Иштеп Чыгуучу{% endblock %}
+
+{% block content %}
+    <section class="hero" data-aos="fade-down">
+        <div class="hero-content">
+            <h1>Саламатсызбы, мен Набиев Айбек</h1>
+            <h2><span class="highlight">Full Stack Веб Иштеп Чыгуучусу</span> JavaScript'де жана Python'до тажрыйбалуу</h2>
+            <p>Мен татаал маалыматтарды иштетүүгө, REST API'лерди түзүүгө жана масштабдуу фронтенд бэкэнд чечимдерин иштеп чыгууга адистешем. Менин мыкты долбоорлорумду карап чыгыңыз!</p>
+            <a href="{{ url_for('projects') }}" class="btn-primary">Менин Долбоорлорум</a>
+            <a href="{{ url_for('contact') }}" class="btn-secondary">Байланыш</a>
+        </div>
+        <div class="hero-image" data-aos="zoom-in" data-aos-delay="300">
+            <img src="{{ url_for('static', filename='images/profile.jpg') }}" alt="Сиздин сүрөтүңүз">
+        </div>
+    </section>
+
+    <section class="featured-skills" data-aos="fade-up">
+        <h3>Негизги Технологияларым:</h3>
+        <ul>
+            <li>Python (3.10+)</li>
+            <li>Flask / Django</li>
+            <li>JavaScript (ES6+)</li>
+            <li>REST API / JSON</li>
+            <li>Git / GitHub / GitLab</li>
+            <li>HTML / CSS / Bootstrap</li>
+        </ul>
+    </section>
+{% endblock %}
